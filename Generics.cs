@@ -167,7 +167,6 @@ class Program
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
-    // ===== Тестування =====
     static void Main()
     {
         // 1
