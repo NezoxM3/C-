@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "bh3DeAt5NN4=",
+  "success": true,
+  "projectFilePath": "/Users/mpyslar100gmail.com/C#/TestLog_log4net/TestLog.csproj",
+  "expectedPackageFiles": [
+    "/Users/mpyslar100gmail.com/.nuget/packages/log4net/3.3.1/log4net.3.3.1.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/serilog/4.3.1/serilog.4.3.1.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/serilog.sinks.console/6.1.1/serilog.sinks.console.6.1.1.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/serilog.sinks.file/7.0.0/serilog.sinks.file.7.0.0.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/system.configuration.configurationmanager/4.5.0/system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/system.security.cryptography.protecteddata/4.5.0/system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "/Users/mpyslar100gmail.com/.nuget/packages/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
