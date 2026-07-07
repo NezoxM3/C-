@@ -8,6 +8,8 @@ public class AppDbContext : DbContext
 
     public DbSet<Grade> Grades { get; set; }
 
+    public DbSet<Group> Groups { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlite("Data Source=student.db");
