@@ -1,0 +1,10 @@
+A computer is a machine that processes data.
+Computer software tells a computer what to do.
+A developer writes code to create software and applications.
+A program can store data in a database.
+A computer system can connect to a network.
+The internet connects many computer systems around the world.
+A developer can write a program that reads data from a database.
+Software can communicate through a network.
+A computer program is made from code.
+Good software helps people work with data.

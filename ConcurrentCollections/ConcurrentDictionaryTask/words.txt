@@ -1,0 +1,10 @@
+computer
+program
+software
+system
+data
+database
+network
+internet
+code
+developer
