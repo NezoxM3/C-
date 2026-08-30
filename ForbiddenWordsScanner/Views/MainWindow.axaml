@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ForbiddenWordsScanner.ViewModels"
+        xmlns:models="using:ForbiddenWordsScanner.Models"
+        x:Class="ForbiddenWordsScanner.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Title="Forbidden Words Scanner"
+        Width="900" Height="700">
+
+    <Grid Margin="15" RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
+
+        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+            <StackPanel>
+                <TextBlock Text="Заборонені слова (одне слово на рядок):" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding ForbiddenWordsRaw}"
+                         AcceptsReturn="True"
+                         Height="100"
+                         TextWrapping="Wrap"/>
+                <Button Content="Завантажити з файлу..." Command="{Binding LoadWordsFromFileCommand}" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Папка призначення:" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBox Text="{Binding DestinationFolder}" Width="500" IsReadOnly="True"/>
+                <Button Content="Огляд..." Command="{Binding ChooseDestinationFolderCommand}"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="Старт" Command="{Binding StartCommand}" Width="100"/>
+            <Button Content="{Binding PauseButtonText}" Command="{Binding PauseResumeCommand}" Width="100"/>
+            <Button Content="Стоп" Command="{Binding StopCommand}" Width="100"/>
+            <TextBlock Text="{Binding StatusText}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </StackPanel>
+
+        <Border Grid.Row="3" BorderBrush="Gray" BorderThickness="1" Padding="10">
+            <Grid RowDefinitions="Auto,*">
+                <TextBlock Grid.Row="0" Text="Знайдені файли:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ListBox Grid.Row="1" ItemsSource="{Binding Results}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:ScanResult">
+                            <StackPanel Orientation="Horizontal" Spacing="15">
+                                <TextBlock Text="{Binding OriginalFilePath}" Width="450" TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Text="{Binding FileSizeBytes, StringFormat='{}{0} байт'}"/>
+                                <TextBlock Text="{Binding TotalReplacements, StringFormat='Замін: {0}'}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Row="4" Margin="0,10,0,10">
+            <TextBlock Text="{Binding ProgressText}" Margin="0,0,0,3"/>
+            <ProgressBar Minimum="0" Maximum="100" Value="{Binding ProgressPercent}" Height="20"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Spacing="10">
+            <Button Content="Відкрити папку зі звітом" Command="{Binding OpenReportFolderCommand}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
